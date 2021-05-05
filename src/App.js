@@ -1,23 +1,31 @@
-import logo from './logo.svg';
+import { useState } from 'react';
 import './App.css';
+import Home from './Home';
+import Pricing from './Pricing';
 
+// 16.8.0+ >
 function App() {
+  // const [state, setState] = useState(initialState)
+
+
+  const [pageView,setPageView] = useState("HOME");
+  // || && >= === ==
+  const changeToPricingPage = () =>{
+    // pageView = "PRICING" ----> Should not Mutate Directly
+    setPageView("PRICING")
+  }
+  const backToHome = () =>{
+    setPageView("HOME")
+  }
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      This is in Sample React App
+      {pageView === "HOME" && (
+        <Home changeToPricingPage={changeToPricingPage} />
+      )}
+      {pageView === "PRICING" && (
+        <Pricing backToHome={backToHome}/>
+      )}
     </div>
   );
 }
