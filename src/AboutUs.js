@@ -32,7 +32,11 @@ class AboutUs extends React.Component{
     componentWillUnmount(){ // Component will be removed (Unmount => Remove from DOM)
         console.log("Im in component will unmount")
     }
-    
+
+    customFunction = () =>{
+
+    } 
+
     render(){
         console.log("Im in Render method")
         return(
@@ -42,7 +46,7 @@ class AboutUs extends React.Component{
                 <div>
                     Some of the Students from the alpha batch:
                     {this.props.students.map((student,index) =>(
-                        <StudentDisplay name={student.name} rollNo={student.rollNo} designation={student.designation}/>
+                        <StudentDisplay key={index} name={student.name} rollNo={student.rollNo} designation={student.designation}/>
                     ))}
                 </div>
                 <div style={{marginTop:16,marginBottom:16,fontSize:24,fontWeight:600}}>No of Students: {this.state.noOfStudents}</div>

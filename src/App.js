@@ -1,10 +1,14 @@
 import { useState } from 'react';
+import Timer from './Timert';
 import AboutUs from './AboutUs';
 import './App.css';
+import CommentApp from './App1';
+import ContactUs from './Contact';
 import Home from './Home';
 import Pricing from './Pricing';
 
 // 16.8.0+ >
+
 
 const studentArray = [
   {
@@ -41,6 +45,8 @@ function App() {
   // State is a observed Variable ->  Whenever state changes Re-render is being done
   const [pageView,setPageView] = useState("HOME");
   const [students,setStudents] = useState(studentArray)
+  const [initialVisitors,setInitialVisitors] = useState(100);
+  const [dummyState,setDummyState] = useState(10);
 
   // || && >= === ==
   const changeToPricingPage = () =>{
@@ -72,9 +78,20 @@ function App() {
       {pageView === "ABOUT_US" && (
         <AboutUs students = {students} />
       )}
+      {pageView === "CONTACT_US" && (
+        <ContactUs initialNoOfVisitors={initialVisitors} dummyProps={dummyState} />
+      )}
       <button onClick={aboutUsClickHandler}>About Us</button>
       <button onClick={() => setPageView("HOME")}>Back to Home</button>
       <button onClick={addNewStudent}>Add Student</button>
+      <button onClick={() => setPageView("CONTACT_US")}>Move to Contact Us </button>
+      <button onClick={() => setInitialVisitors(initialVisitors + 10)}>Change Visitors</button>
+      <button onClick={()=>setDummyState(dummyState + 10)}>Change Dummy State</button>
+
+      <div style={{marginTop:64}}>
+        <CommentApp/>
+        <Timer/>
+      </div>
     </div>
   );
 }
