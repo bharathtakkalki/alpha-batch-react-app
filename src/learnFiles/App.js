@@ -3,7 +3,7 @@ import Timer from './Timert';
 import AboutUs from './AboutUs';
 import './App.css';
 import CommentApp from './App1';
-import ContactUs from './Contact';
+import ContactUs from '../Contact';
 import Home from './Home';
 import Pricing from './Pricing';
 
