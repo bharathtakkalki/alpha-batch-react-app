@@ -1,0 +1,37 @@
+.header{
+    height:70px;
+    background:$secondary;
+    padding: 8px 16px;
+    display:flex;
+    align-items:center;
+    justify-content: space-between;
+    .logo-container{
+        .logo{
+            height:75px;
+            width: 75px;
+        }
+    }
+    .nav-bar{
+        
+        .link{
+           margin:0px 16px;
+           text-decoration: none;
+           color:$gray5;
+           font-size: 22px;
+           font-weight:600;
+           &.selected{
+               color:$accent1;
+               text-decoration: underline;
+           }
+           .hello{
+               color:red;
+           }
+           &:hover{
+               color:$accent1;
+               text-decoration:underline;
+           }
+        }
+
+    }
+}
+

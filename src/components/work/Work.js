@@ -1,12 +1,14 @@
 import { useEffect, useState } from "react";
-import { useLocation } from "react-router";
 
 const Work = (props) =>{
     const [work,setWork] = useState("")
-    const query = new URLSearchParams(useLocation().search)
+    const query = new URLSearchParams(props.location.search)
     useEffect(()=>{
         console.log(props)
-        console.log(query)
+        // console.log(query.get("key"))
+        console.log(query.get("key"))
+        console.log(query.get("key1"))
+
         setWork(props.match.params.work)
     },[])
     return (

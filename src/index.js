@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
 import Controller from './Controller';
+import mains from './styles/main.scss';
 
 ReactDOM.render(
     <Controller/>,
