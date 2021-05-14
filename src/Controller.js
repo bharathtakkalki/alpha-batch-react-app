@@ -13,9 +13,9 @@ const Controller = () =>{
         <div className="app">
             <Router>
                 <Switch>
-                    <Route exact path="/" render={() => <Home/>} />
-                    <Route path="/contact-us" render={() => <ContactUs/>} />
-                    <Route path="/resume" render={() => <Resume/>} />
+                    <Route exact path="/" render={(props) => <Home {...props} />} />
+                    <Route path="/contact-us" render={(props) => <ContactUs {...props} />} />
+                    <Route path="/resume" render={() => <Resume />} />
                     <Route path="/work/:work" render={(props) => <Work {...props} />} />
             
                     <Route path="*" render={() => <NotFound/>}/>

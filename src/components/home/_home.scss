@@ -1,0 +1,22 @@
+.home{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height:80vh;
+    align-items: center;
+    .first-section{
+        display: flex;
+        width:50%;
+        .first-section-text{
+            margin-left:24px;
+        }
+    }
+    .second-section{
+        display: flex;
+        width:50%;
+        .second-section-text{
+            margin-right:24px;
+            width:40%
+        }
+    }
+}

@@ -1,0 +1,20 @@
+.text-component{
+    h3{
+        font-size:84px;
+        color:$gray5;
+        margin: 8px 0px;
+    }
+    p{
+        font-size:32px;
+        margin: 8px 0px;
+        color:$gray5;
+    }
+    &.medium{
+        h3{
+            font-size:46px;
+        }
+        p{
+            font-size:24px;
+        }
+    }
+}
